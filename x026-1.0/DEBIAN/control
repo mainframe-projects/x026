@@ -1,0 +1,11 @@
+Package: x026
+Version: 1.0
+Priority: optional
+Architecture:  armhf
+Depends: xutils-dev(>=1:7.7+5), libxaw7-dev(>= 2:1.0.13-1), libxaw3dxft8-dev(>= 1.6.2e-2)
+Maintainer: Ian Stanley <iandstanley@gmail.com>
+Homepage: https://github.com/pi-mainframes/x026
+Description: IBM026 Keypunch emulator (X11)
+ x026 is an IBM 026 keypunch emulator for X11. Originally written by Paul Mattes (see source)
+ Packaged for Debian Armhf (Raspberry Pi) by Ian Stanley
+

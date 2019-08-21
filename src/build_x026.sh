@@ -17,9 +17,9 @@ make
 
 # Install executables
 
-sudo cp x026 /usr/local/bin
+sudo cp x026 ../x026-1.0/usr/local/bin
 
 # Install manpage
-sudo cp x026.man /usr/local/share/man/man1/x026.1
+sudo cp x026.man ../x026-1.0/usr/local/share/man/man1/x026.1
 
 
