@@ -1,0 +1,99 @@
+'\" t
+.TH x026 1 "13 July 2003"
+.SH "NAME"
+x026 \-
+\s-1IBM\s+1 keypunch emulator
+.SH "SYNOPSIS"
+\fBx026\fP
+.SH "DESCRIPTION"
+\fBx026\fP is a simulation of an IBM 026 keypunch.
+.LP
+It allows input from the keyboard or by pasting the X11 selection with the
+middle mouse button.
+Keyboard input is deliberately paced so that typing occurs at a realistically
+slow pace.
+This can be overridden with a command-line option.
+If the selected character set does not support lower-case characters, they
+will be mapped to upper-case characters.
+If the selected character set does not support a particular character at all,
+it will be ignored.
+.LP
+Multiple punches in a single column can be entered by holding down
+the \fBAlt\fP key.
+.LP
+The current card can be moved left and right with the left and right cursor
+keys, and back to column 1 with the \fBHome\fP key.
+There is one configured tab stop, which is set up to skip to the body of a
+\s-1FORTRAN\s+1 statement.
+.LP
+The current card is stored, and the next card fed in, with the \fBReturn\fP
+key.
+.LP
+There is a button to discard the current card; it will be replaced with a
+blank card with the same sequence number as the discarded card.
+.LP
+The virtual card deck can be saved in one of two ways.
+The \fISave Ascii\fP option saves the deck as ASCII (actually ISO 8859-1) text,
+with multi-punch columns implemented as backspaces.
+The \fISave Images\fP option saves the deck in Douglas Jones's standard
+card deck format (see http://www.cs.uiowa.edu/~jones/cards/index.html for
+details).
+.SH "OPTIONS"
+\fBx026\fP is a toolkit-based program, so it understands standard Xt
+options and resources (e.g., \-geom).
+It also understands the following options:
+.TP
+\fB\-ifont\fP \fIfont\fP
+Interpreter (card edge) font.
+Defaults to \fB7x13\fP.
+.TP
+\fB\-nonumber\fP
+Do not automatically number the cards in columns 73 through 80.
+.TP
+\fB\-typeahead\fP
+Allow typeahead.
+This is very un-026-like.
+.TP
+\fB\-charset\fP \fIname\fP
+Keypunch character set:
+.TS
+center;
+c l .
+bcd-h	026 FORTRAN (default)
+bcd-a	026 commercial
+029	029 standard
+1401	IBM 1401
+ebcdic	S/360 EBCDIC
+.TE
+.TP
+\fB\-card\fP \fIname\fP
+Card image:
+.TS
+center;
+c l .
+collins	Collins Radio Corporation
+cmu	Carnegie Mellon University
+.TE
+.TP
+\fB\-026ftn\fP
+Alias for \fB-charset bcd-h\fP.
+.TP
+\fB\-026comm\fP
+Alias for \fB-charset bcd-a\fP.
+.TP
+\fB\-029\fP
+Alias for \fB-charset 029\fP.
+.TP
+\fB\-EBCDIC\fP
+Alias for \fB-charset ebcdic\fP.
+.TP
+\fB-help\fP
+Display command-line syntax help.
+.SH BUGS
+The author obviously has very little experience with real keypunches, and
+would appreciate any input on how to make \fBx026\fP a more realistic
+experience.
+.LP
+Sound effects would be an obvious addition, but are notoriously non-portable.
+.SH AUTHOR
+Paul Mattes

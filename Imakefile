@@ -1,0 +1,7 @@
+/* Imakefile for x026 */
+
+LOCAL_LIBRARIES = $(XAWLIB) $(XMULIB) $(XPMLIB) $(XTOOLLIB) $(XLIB)
+SRCS = x026.c
+OBJS = x026.o
+
+ComplexProgramTarget(x026)
